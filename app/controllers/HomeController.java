@@ -82,7 +82,7 @@ public class HomeController extends Controller {
     }
 
     // Delete Product by id
-    public Result deleteProduct(Long id) {
+    public Result deleteProduct(Integer id) {
 
         // find product by id and call delete method
         Product.find.ref(id).delete();

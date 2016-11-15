@@ -14,7 +14,7 @@ public class Product extends Model {
     // Properties
     // Annotate id as the primary key
     @Id
-    private Long id;
+    private Integer id;
 
     // Other fields marked as being required (for validation purposes)
     @Constraints.Required
@@ -37,7 +37,7 @@ public class Product extends Model {
     }
 
     // Constructor to initialise object
-    public  Product(Long id, String name, String description, int stock, double price) {
+    public  Product(Integer id, String name, String description, int stock, double price) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -45,8 +45,8 @@ public class Product extends Model {
         this.price = price;
     }
 
-    //Generic query helper for entity Computer with id Long
-    public static Finder<Long,Product> find = new Finder<Long,Product>(Product.class);
+    //Generic query helper for entity Computer with id Integer
+    public static Finder<Integer,Product> find = new Finder<Integer,Product>(Product.class);
 
     // Find all Products in the database
     // Filter product name 
@@ -54,11 +54,11 @@ public class Product extends Model {
         return Product.find.all();
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
